@@ -4,11 +4,12 @@ from app import ma
 
 
 class CustomerSchema(ma.Schema):
+    id = fields.Integer(dump_only=True)
     name = fields.String(required=True)
     email = fields.String(required=True)
     phone = fields.String(required=True)
 
-    
+    fields = ("id", "name", "phone", "email")
 
 
 class ProductSchema(ma.Schema):
